@@ -5,9 +5,11 @@ import aiworld.Main;
 public class AdminAI {
     private final Main plugin;
 
-    public AdminAI(Main plugin) {
-        this.plugin = plugin;
-    }
+    public AdminAI(Main plugin) { this.plugin = plugin; }
 
-    // Future: add methods to send AI questions, process responses, and manage server tools
+    // Placeholder AI method
+    public String askAI(String question) {
+        // TODO: Replace with OpenAI API integration
+        return "AI says: " + question;
+    }
 }

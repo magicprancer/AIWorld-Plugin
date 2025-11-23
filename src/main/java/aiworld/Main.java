@@ -27,4 +27,33 @@ public class Main extends JavaPlugin {
         admin = new AdminModule(this);
 
         // Register commands
-        new
+        new AINPCCommand(this);
+        new AIAdminCommand(this, new AdminAI(this));
+
+        getLogger().info("AIWorld Plugin Enabled!");
+
+        // Start a simple AI loop every 10 seconds (200 ticks)
+        getServer().getScheduler().runTaskTimer(this, () -> {
+            // Example placeholder AI behavior
+            // TODO: Replace with real NPC lists and AI methods
+
+            // Town NPCs (work/talk)
+            // if you add NPC lists: towns.getAllNPCs().forEach(npc -> npc.work());
+
+            // Survivor NPCs (explore/gather)
+            // survivors.getAllNPCs().forEach(npc -> npc.explore());
+
+            // Magic NPCs (cast spells/give quests)
+            // magic.getAllNPCs().forEach(npc -> npc.castSpell("Spark"));
+
+            // Admin AI background tasks
+            // admin.getAdminAI().askAI("Placeholder background task");
+
+        }, 0L, 200L); // 0L = start immediately, 200L = 10 seconds in ticks
+    }
+
+    @Override
+    public void onDisable() {
+        getLogger().info("AIWorld Plugin Disabled!");
+    }
+}

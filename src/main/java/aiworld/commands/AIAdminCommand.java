@@ -31,9 +31,8 @@ public class AIAdminCommand implements CommandExecutor {
         String question = String.join(" ", args);
         sender.sendMessage("Sending question to AI: " + question);
 
-        // TODO: integrate OpenAI API to get a response
-        String response = "AI response placeholder";
-
+        // Use AdminAI placeholder
+        String response = adminAI.askAI(question);
         sender.sendMessage(response);
 
         return true;

@@ -2,12 +2,11 @@ package aiworld.commands;
 
 import aiworld.Main;
 import aiworld.towns.TownNPC;
-import org.bukkit.Bukkit;
+import org.bukkit.entity.Player;
+import org.bukkit.entity.Villager;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
-import org.bukkit.entity.Player;
-import org.bukkit.entity.Villager;
 
 public class AINPCCommand implements CommandExecutor {
     private final Main plugin;
@@ -32,7 +31,7 @@ public class AINPCCommand implements CommandExecutor {
         String name = args[1];
         String personality = String.join(" ", args, 2, args.length);
 
-        // Spawn a villager at the player location
+        // Spawn a villager at player location
         Villager villager = player.getWorld().spawn(player.getLocation(), Villager.class);
         villager.setCustomName(name);
         villager.setCustomNameVisible(true);
@@ -40,9 +39,11 @@ public class AINPCCommand implements CommandExecutor {
         // Create TownNPC object
         TownNPC npc = new TownNPC(villager, personality);
 
-        player.sendMessage("AI NPC " + name + " with personality '" + personality + "' created!");
+        // Add NPC to TownsModule list
+        plugin.towns.addNPC(npc);
 
-        // TODO: add NPC AI behavior
+        player.sendMessage("AI NPC " + name + " with personality '" + personality + "' created and added to the AI loop!");
+
         return true;
     }
 }

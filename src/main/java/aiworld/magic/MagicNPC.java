@@ -8,16 +8,18 @@ public class MagicNPC {
 
     public MagicNPC(Entity entity, String type) {
         this.entity = entity;
-        this.type = type; // e.g., "wizard", "fairy", "guardian"
+        this.type = type;
     }
 
-    public Entity getEntity() {
-        return entity;
+    public Entity getEntity() { return entity; }
+    public String getType() { return type; }
+
+    // Placeholder magical actions
+    public void castSpell(String spell) {
+        entity.getWorld().broadcastMessage(type + " casts " + spell);
     }
 
-    public String getType() {
-        return type;
+    public void giveQuest(String quest) {
+        entity.getWorld().broadcastMessage(type + " offers quest: " + quest);
     }
-
-    // Future: Add AI behavior methods (cast spells, give quests, interact)
 }

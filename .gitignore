@@ -1,13 +1,44 @@
-# Ignore Gradle build output
+# =======================
+# Gradle / Build
+# =======================
 /build/
 /out/
-/*.class
 /.gradle/
+/*.class
+.gradle/
 
-/# Ignore IDE files
+# Shadow plugin output
+*.jar
+
+# =======================
+# IDEs
+# =======================
+# IntelliJ IDEA
 *.iml
 /.idea/
+/*.ipr
+/*.iws
 
-/# Ignore OS files
+# Eclipse
+.project
+.classpath
+.settings/
+
+# VS Code
+.vscode/
+
+# =======================
+# OS Files
+# =======================
+# macOS
 .DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
 Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Linux
+*~

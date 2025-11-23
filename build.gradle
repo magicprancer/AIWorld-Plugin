@@ -21,7 +21,6 @@ dependencies {
 }
 
 tasks {
-    // Skip tests entirely
     test {
         enabled = false
     }

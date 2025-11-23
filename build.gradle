@@ -6,17 +6,20 @@ plugins {
 group = 'aiworld'
 version = '0.1.0'
 sourceCompatibility = '17'
+targetCompatibility = '17'
 
 repositories {
     mavenCentral()
-    maven { url 'https://papermc.io/repo/repository/maven-public/' }
+    maven { url = 'https://papermc.io/repo/repository/maven-public/' }
 }
 
 dependencies {
     compileOnly 'io.papermc.paper:paper-api:1.21.1-R0.1-SNAPSHOT'
 }
 
-shadowJar {
-    archiveBaseName.set('AIWorld')
-    archiveClassifier.set('')
+tasks {
+    shadowJar {
+        archiveFileName.set('AIWorld.jar')
+        from sourceSets.main.output
+    }
 }

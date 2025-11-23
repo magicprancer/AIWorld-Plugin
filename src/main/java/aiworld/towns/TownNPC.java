@@ -11,13 +11,17 @@ public class TownNPC {
         this.personality = personality;
     }
 
-    public Villager getVillager() {
-        return villager;
+    public Villager getVillager() { return villager; }
+    public String getPersonality() { return personality; }
+
+    // Placeholder AI methods
+    public void work() {
+        // TODO: Make NPC work/farm/build
+        villager.setCustomName("Working " + personality);
     }
 
-    public String getPersonality() {
-        return personality;
+    public void talk(String message) {
+        // TODO: Add AI chat
+        villager.setCustomName(message);
     }
-
-    // Future: Add AI behavior methods (work, patrol, talk)
 }

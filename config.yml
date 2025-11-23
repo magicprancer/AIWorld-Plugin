@@ -1,0 +1,4 @@
+openai_api_key: "REPLACE_WITH_YOUR_KEY"
+npc_response_timeout_seconds: 10
+enable_admin_ai: true
+max_concurrent_ai_calls: 3

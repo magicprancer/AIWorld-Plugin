@@ -1,11 +1,12 @@
 name: Build AIWorld Plugin
-name: Build AIWorld Plugin
 
 on:
   push:
-    branches: [ main ]
+    branches:
+      - main
   pull_request:
-    branches: [ main ]
+    branches:
+      - main
 
 jobs:
   build:
@@ -27,7 +28,7 @@ jobs:
       - name: Build plugin JAR
         run: ./gradlew shadowJar
 
-      # 4️⃣ Upload the compiled JAR as artifact (v4)
+      # 4️⃣ Upload the compiled JAR as artifact
       - name: Upload AIWorld JAR
         uses: actions/upload-artifact@v4
         with:

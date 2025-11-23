@@ -7,8 +7,8 @@ group = 'aiworld'
 version = '0.1.0'
 
 java {
-    sourceCompatibility = JavaVersion.VERSION_17
-    targetCompatibility = JavaVersion.VERSION_17
+    sourceCompatibility = 25
+    targetCompatibility = 25
 }
 
 repositories {
@@ -17,7 +17,6 @@ repositories {
 }
 
 dependencies {
-    // Always use latest PaperMC API
     compileOnly 'io.papermc.paper:paper-api:1.21.1-R0.1-SNAPSHOT'
 }
 

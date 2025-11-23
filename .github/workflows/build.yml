@@ -15,22 +15,20 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      # Setup Java 17
+      # Set up Java 17
       - name: Setup Java
         uses: actions/setup-java@v3
         with:
           distribution: temurin
           java-version: 17
 
-      # Download and install Gradle automatically (works with Gradle 9.x)
-      - name: Setup Gradle
-        uses: gradle/gradle-build-action@v4
-        with:
-          gradle-version: '9.2.1'
+      # Make wrapper executable
+      - name: Make Gradle wrapper executable
+        run: chmod +x ./gradlew
 
-      # Build plugin JAR
+      # Build plugin JAR using wrapper
       - name: Build plugin JAR
-        run: gradle shadowJar --no-daemon
+        run: ./gradlew shadowJar --no-daemon
 
       # Upload artifact
       - name: Upload AIWorld JAR

@@ -1,0 +1,14 @@
+name: AIWorld
+main: aiworld.Main
+version: 0.1.0
+api-version: 1.21
+commands:
+  ainpc:
+    description: Create or manage AI NPCs
+    usage: /ainpc create <name> <personality...>
+  aiadmin:
+    description: Ask AI for admin tools
+    usage: /aiadmin <question>
+permissions:
+  aiworld.admin:
+    default: op

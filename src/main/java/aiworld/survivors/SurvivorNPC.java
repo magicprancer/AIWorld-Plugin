@@ -8,16 +8,18 @@ public class SurvivorNPC {
 
     public SurvivorNPC(Player npcPlayer, String role) {
         this.npcPlayer = npcPlayer;
-        this.role = role; // e.g., "explorer", "builder", "gatherer"
+        this.role = role;
     }
 
-    public Player getNpcPlayer() {
-        return npcPlayer;
+    public Player getNpcPlayer() { return npcPlayer; }
+    public String getRole() { return role; }
+
+    // Placeholder AI behavior
+    public void explore() {
+        npcPlayer.sendMessage("Exploring the world as " + role);
     }
 
-    public String getRole() {
-        return role;
+    public void gather() {
+        npcPlayer.sendMessage("Gathering resources as " + role);
     }
-
-    // Future: Add AI behavior methods (gather, build, survive)
 }

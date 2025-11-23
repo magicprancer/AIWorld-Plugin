@@ -4,10 +4,14 @@ import aiworld.Main;
 
 public class AdminModule {
     private final Main plugin;
+    private final AdminAI adminAI;
 
     public AdminModule(Main plugin) {
         this.plugin = plugin;
+        this.adminAI = new AdminAI(plugin);
     }
 
-    // Future: add AI chat moderation, admin commands, announcements
+    public AdminAI getAdminAI() {
+        return adminAI;
+    }
 }
